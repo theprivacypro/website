@@ -1,0 +1,98 @@
+---
+import { Icon } from 'astro-icon/components';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
+import type { Steps as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  actions = await Astro.slots.render('actions'),
+  items = [],
+  isReversed = false,
+
+  // new: optional image slot (right column)
+  image = await Astro.slots.render('image'),
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container ?? ''} bg={bg}>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
+    <div class={`grid gap-10 md:gap-12 md:grid-cols-2 ${isReversed ? 'md:[direction:rtl]' : ''}`}>
+      <!-- left column: headline -> items -> action -->
+      <div class="[direction:ltr] w-full">
+        <Headline
+          title={title}
+          subtitle={subtitle}
+          tagline={tagline}
+          classes={{
+            container: 'text-center md:text-left rtl:md:text-right !mb-0',
+            title: 'text-3xl lg:text-4xl font-bold font-heading !mb-5',
+            subtitle: 'text-xl text-muted dark:text-slate-400 !mb-3',
+          }}
+        />
+
+        <!-- items -->
+    <div class="space-y-3">
+    {items?.length
+        ? items.map(({ title: t2, description }) => (
+            <div>
+            {t2 && <h3 class="text-lg font-semibold font-heading mb-1" set:html={t2} />}
+            <p class="text-muted dark:text-gray-400 leading-relaxed" set:html={description} />
+            </div>
+        ))
+        : ''}
+    </div>
+        
+
+        <!-- action under items -->
+        <div class="w-full text-center md:text-left rtl:md:text-right mt-10">
+         {
+            actions && (
+              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+                {Array.isArray(actions) ? (
+                  actions.map((action) => (
+                    <div class="flex w-full sm:w-auto">
+                      <Button {...(action || {})} class="w-full sm:mb-0" />
+                    </div>
+                  ))
+                ) : (
+                  <Fragment set:html={actions} />
+                )}
+              </div>
+            )
+          }
+        </div>
+      </div>
+
+      <!-- right column: optional image -->
+      {
+        image && (
+          <div class={`${isReversed ? 'md:order-first [direction:ltr]' : ''}`}>
+            {typeof image === 'string' ? (
+              <Fragment set:html={image} />
+            ) : (
+              <Image
+                class="mx-auto rounded-md w-full max-w-2xl"
+                widths={[400, 768, 1024, 1600]}
+                sizes="(max-width: 767px) 90vw, (max-width: 1023px) 768px, 800px"
+                loading="lazy"
+                width={1024}
+                height={576}
+                {...image}
+              />
+            )}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</WidgetWrapper>

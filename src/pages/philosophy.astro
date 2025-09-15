@@ -1,0 +1,108 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+
+const metadata = {
+  title: 'The Privacy Pro Philosophy and Approach',
+};
+---
+<Layout metadata={metadata}>
+
+<!-- PHILOSOPHY -->
+
+  <Hero 
+    tagline="Philosophy"
+    image={{
+      src: '~/assets/images/analysis.png',
+      alt: '',
+    }}
+    >
+    <Fragment slot="title">
+      Business objectives should drive the privacy strategy...<br><span class="text-primary dark:text-white"> not the other way around.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      When privacy is treated as a roadblock, key risks go unaddressed.
+    </Fragment>
+    
+</Hero>
+
+<!-- APPROACH -->
+
+  <Steps2
+  id="approach"  
+  tagline='Approach'
+    subtitle="We are not here to give you vague advice or theoretical frameworks. We are here to show you how it is done."
+    columns={1}
+    items={[
+      {
+        description: 'Our goal is to help you become a more confident, effective privacy professional, able to navigate real-world complexity with clarity and impact. ',
+        icon: 'tabler:compass',
+
+      },      {
+        description: 'Drawing from over 20 years of hands-on experience across North America and Europe, we focus on what works in practice.',
+        icon: 'tabler:tools',
+      },      {
+        description: 'From startups to multinationals, we have helped dozens of companies build privacy programs that actually function inside a business, not just on paper.',
+        icon: 'tabler:settings-heart',
+      },
+    ]}>
+
+    <Fragment slot="title">
+      We equip you with the tools, skills, and mindset to implement a privacy program that works for both privacy and the business.
+    </Fragment>
+
+
+    </Steps2>
+
+<!-- BAR -->
+
+  <Features2
+    id="bar"
+    subtitle="That means saying yes to innovation while protecting what matters; making smart, defensible decisions instead of chasing checklists; and cutting the noise to help you focus on real impact."
+    columns={3}
+    items={[
+      {
+        title: 'Business-savvy',
+        description:
+          'Being a strong privacy leader means being a good business partner.<br><br> Your job is not to block progress. It is to help teams use data responsibly and bring great ideas to market, quickly and lawfully. ',
+        icon: 'tabler:circle-letter-b',
+        classes: {
+          icon: 'absolute top-3 left-5 mx-auto text-primary h-12 w-12 text-[10rem] -z-10', // transparent teal, big, centered, behind text
+          title: 'ml-12 mb-4'
+          },
+      },
+      {
+        title: 'Accountable',
+        description: 'Accountability is about more than compliance.<br><br>It means making informed decisions, owning the outcome, and being able to explain your rationale.',
+        icon: 'tabler:circle-letter-a',
+        classes: {
+          icon: 'absolute top-3 left-5 mx-auto text-primary h-12 w-12 text-[10rem] -z-10', // transparent teal, big, centered, behind text
+          title: 'ml-12 mb-4'
+          },      },
+      {
+        title: 'Relaxed',
+        description:
+          'Privacy is complex, but it does not have to be overwhelming.<br><br> We help reduce friction, eliminate unnecessary roadblocks, and focus on what actually matters.',
+        icon: 'tabler:circle-letter-r',
+        classes: {
+          icon: 'absolute top-3 left-5 mx-auto text-primary h-12 w-12 text-[10rem] -z-10', // transparent teal, big, centered, behind text
+          title: 'ml-12 mb-4'
+          },      },
+    ]}
+  >
+
+    <Fragment slot="title">
+      We set the<span class="text-primary text-4xl dark:text-white"> BAR</span> high for privacy professionals.
+    </Fragment>
+
+  </Features2>
+  
+
+
+
+</Layout>

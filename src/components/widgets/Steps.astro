@@ -21,35 +21,48 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
-  <div class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
-    <div class:list={['md:py-4 md:self-center', { 'md:basis-1/2': image }, { 'w-full': !image }]}>
+  <div style=""
+   class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
+    <div style=""
+    class:list={['md:py-4 md:self-center', { 'md:basis-1/2': image }, { 'w-full': !image }]}>
       <Headline
         title={title}
         subtitle={subtitle}
-        tagline={tagline}
+        tagline= {tagline}
         classes={{
           container: 'text-left rtl:text-right',
           title: 'text-3xl lg:text-4xl',
           ...((classes?.headline as object) ?? {}),
         }}
       />
-      <Timeline items={items} classes={classes?.items as Record<string, never>} />
+      
+      <Timeline
+        items={items}
+        classes={{
+          icon: 'bg-accent border-none w-10 h-10 p-3 flex items-center justify-center font-heading font-bold text-base',
+          title: 'mb-1',
+          subtitle: 'mb-3 border-1 text-blue-600',
+          ...((classes?.items as object) ?? {}),
+        }}
+      />
+
+
     </div>
     {
       image && (
-        <div class="relative md:basis-1/2">
+            <div style=""
+            class="basis-1/2 pt-5 flex justify-center intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
           {typeof image === 'string' ? (
             <Fragment set:html={image} />
           ) : (
             <Image
-              class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
-              widths={[400, 768]}
-              sizes="(max-width: 768px) 100vw, 432px"
-              width={432}
-              height={768}
-              layout="cover"
-              src={image?.src}
-              alt={image?.alt || ''}
+                  class="w-full max-w-[500px] max-h-[500px] h-auto"
+                  widths={[400, 768, 1024, 2040]}
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  loading="eager"
+                  width={400}
+                  height={400}
+                  {...image}
             />
           )}
         </div>

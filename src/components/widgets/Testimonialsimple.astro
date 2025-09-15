@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon/components';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
+import type { Steps as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  actions = await Astro.slots.render('actions'),
+  items = [],
+  isReversed = false,
+
+  // new: optional image slot (right column)
+  image = await Astro.slots.render('image'),
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container ?? ''} bg={bg}>
+  <div class="relative max-w-3xl mx-auto py-6 px-4 sm:px-6">
+    
+      <!-- headline -->
+        <Headline
+          title={title}
+          subtitle={subtitle}
+          tagline={tagline}
+          classes={{
+            tagline: 'text-center text-primary',
+            container: 'text-center md:text-left rtl:md:text-right !mb-0',
+            title: 'text-center text-3xl lg:text-4xl font-bold font-heading !mb-5',
+            subtitle: 'text-center text-xl text-muted dark:text-slate-400 !mb-3',
+          }}
+        />
+
+        <!-- items -->
+
+    <div class="space-y-3 text-center">
+    {items?.length
+        ? items.map(({ title: t2, description }) => (
+            <div>
+            {t2 && <h3 class="text-lg font-semibold font-heading mb-1" set:html={t2} />}
+            <p class="italic text-secondary dark:text-accent leading-relaxed" set:html={description} />
+            </div>
+        ))
+        : ''}
+    </div>
+      
+      </div>
+
+</WidgetWrapper>

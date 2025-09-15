@@ -1,0 +1,411 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features from '~/components/widgets/Features.astro';
+import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
+import Nolist from '~/components/widgets/Nolist.astro';
+import Content from '~/components/widgets/Content.astro';
+import { ClientAddressNotAvailable } from 'node_modules/astro/dist/core/errors/errors-data';
+
+const metadata = {
+  title: 'Privacy Impact Assessments',
+};
+---
+<Layout metadata={metadata}>
+
+<!--HERO -->  
+
+  <Hero2
+    tagline="Privacy Impact Assessments"
+    title="Keep it simple. Get it done."
+    subtitle="Maybe someday an expensive software solution will perform magic. Until then, use something that actually works."
+    isReversed={false}
+    image={{
+      src: '~/assets/images/piabrochurecover.jpg',
+      alt: 'Thumbnail of the cover of the brochure about Privacy Impact Assessments, opens a third party viewer (Heyzine). The same content is available as a PDF download.',
+      href: 'https://heyzine.com/flip-book/dd58653c15.html',
+      target: '_blank',
+    }}
+    actions={[
+        {variant: 'primary', target: '_self', text: 'Let’s chat', href: '/', icon:'tabler:phone'},
+        {variant: 'tertiary', target: '_blank', text: 'Download PIA Brochure', href: 'https://heyzine.com/flip-book/dd58653c15.html', icon:'tabler:download'},
+
+    ]}
+    />
+
+<!-- HEYZINE BROCHURE EMBEDDED
+
+<div class="max-w-5xl mx-auto py-5">
+    <iframe allowfullscreen="allowfullscreen" allow="clipboard-write" scrolling="no" class="fp-iframe" src="https://heyzine.com/flip-book/dd58653c15.html" style="border: 0px; width: 100%; height: 355px;"></iframe>
+</div>
+-->
+
+<div style="margin-top:70px;"></div>
+
+<!-- THE PRIVACY PRO APPROACH -->
+
+<Steps
+    id="approach"
+    tagline="PIA Approach"
+    title="You need a decision-making tool, not a dashboard."
+    subtitle="Be a business-savvy privacy pro and spend time on what actually matters."
+    isReversed={true}    
+    image={{
+      src: '~/assets/images/meeting2.png',
+      alt: '',
+    }}
+    items={[
+      {
+        title: 'Risk-based',
+        description:
+          'Not every PIA needs the same level of effort. We use a risk-based approach to focus attention where it matters most and make faster, more consistent decisions without wasting time on low-risk activities.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'Global',
+        description:
+          'The PIA is jurisdiction-agnostic, meaning it works (and is currently being used) across the US, Canada,the UK, and Europe.',
+        icon: 'tabler:world',
+      },
+            {
+        title: 'Proven',
+        description:
+          'The Privacy Pro PIA Template we teach and support is the one we developed for our clients.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+<!-- TESTIMONIAL FOR TEMPLATE -->
+
+<div class="bg-blue-50 dark:bg-transparent">
+    <Testimonialsimple
+    id="templatetestimonial"
+    tagline="PIA Template Testimonial"
+    items={[
+        {
+            description: 'Thank you to Nick, Lauren, and The Privacy Pro for a practical approach to PIAs! They provided clear context and tips to ensure participants don’t let PIAs become a “tick the box” exercise. In fact, they gave pathways to enable business teams and privacy teams to partner on reducing risk together – and even help reduce timelines to complete PIAs.',
+        },
+        {
+            description: 'And in comparison to the jargon-heavy legalese templates from many regulators and law firms, The Privacy Pro template is easily accessible for folks who don’t speak privacy-specific jargon.',
+        },
+        ]}>
+</div>
+
+<!-- GET STARTED (4 COL) -->
+  <Features2
+    id="getstarted"  
+    tagline='Get Started'
+    title='Ready to replace your PIA with one that works?'
+    subtitle="The Privacy Pro PIA Template is used by companies across North America because it is simple and it works."
+    columns={4}
+    items={[
+     {
+        title: 'PIA Template',
+        description: "An intuitive Excel-based template with built in guidance and workflow",
+        icon: 'tabler:file-type-xls',
+        callToAction: {
+          href: '#templatefaq',
+          text: 'FAQ',
+          variant: 'accent',
+          icon: 'tabler:arrow-right',
+          class: 'text-primary',
+        },
+        classes: {
+          icon: 'mx-auto',
+          title: 'text-center',
+          description: 'text-center',
+          },
+      },
+     {
+        title: 'Practical Training',
+        description: "Practical, case-based learning focused on what to do, not just what to know",
+        icon: 'tabler:bulb',
+        callToAction: {
+          href: '#training',
+          text: 'Learn more',
+          variant: 'accent',
+          icon: 'tabler:arrow-right',
+          class: 'text-primary',
+
+        },
+        classes: {
+          icon: 'mx-auto',
+          title: 'text-center',
+          description: 'text-center',
+          },
+      },
+      {
+        title: 'Program Tools',
+        description:
+          "Procedure templates, workflows, and job aids to jump start your PIA program",
+        icon: 'tabler:automation',
+        callToAction: {
+          href: '#toolkit',
+          text: 'Learn more',
+          variant: 'accent',
+          icon: 'tabler:arrow-right',
+          class: 'text-primary',
+        },
+        classes: {
+          icon: 'mx-auto',
+          title: 'text-center',
+          description: 'text-center',
+          },
+      },
+      {
+        title: 'Expert Support',
+        description:
+          "Expert help when you're stuck, overwhelmed, or need a second set of eyes",
+        icon: 'tabler:messages',
+        callToAction: {
+          href: '#support',
+          text: 'Learn more',
+          variant: 'accent',
+          icon: 'tabler:arrow-right',
+          class: 'text-primary',
+        },
+        classes: {
+          icon: 'mx-auto',
+          title: 'text-center',
+          description: 'text-center',
+          },
+      },
+
+
+    ]} />
+
+
+<!-- TRAINING (WORKSHOP) -->
+
+  <Nolist
+  id="training"  
+  tagline='PIA Training'
+  title="Our popular Hands-on PIA Workshop is the best way to get your whole team on the same page."
+  subtitle=""
+  actions={[
+        {variant: 'primary', target: '_blank', text: 'How we Help with PIAs', href: 'https://heyzine.com/flip-book/dd58653c15.html', icon:'tabler:download'},
+        {variant: 'tertiary', target: '_blank', text: 'Training FAQ', href: '#faqtraining', icon:'tabler:info-hexagon'},        
+        ]}
+  image={{
+      src: '~/assets/images/training1.png',
+      alt: '',
+    }}
+    
+    items={[
+      {
+        title: '',
+        description: 'The workshop provides experiential learning with comprehensive case studies such as a mobile app using location data, AI in employee hiring, the B2B SaaS marketing and sales process.',
+        icon: 'tabler:chevrons-right',
+
+      },      
+      {
+        title: '',
+        description: 'We developed the case studies based on real-world scenarios. Details have been changed to protect the innocent, but we kept the fun stuff: incomplete information, competing priorities, and multiple correct answers!',
+        icon: 'tabler:chevrons-right',
+      },      {
+        title: '',
+        description: ' We can also work through a real-world example that you’re dealing with. By the end of the workshop, your team will have completed a PIA together.',
+        icon: 'tabler:chevrons-right',
+      },
+    ]} />
+
+
+
+<!-- TESTIMONIAL FOR WORKSHOP -->
+
+<div class="bg-blue-50 dark:bg-transparent">
+    <Testimonialsimple
+    id="workshoptestimonial"
+    tagline="PIA Workshop Testimonial"
+    items={[
+        {
+            description: 'Thank you to Nick, Lauren, and The Privacy Pro for a practical approach to PIAs! They provided clear context and tips to ensure participants don’t let PIAs become a “tick the box” exercise. In fact, they gave pathways to enable business teams and privacy teams to partner on reducing riHaving attended other training with Nick and The Privacy Pro, I knew this would be excellent, but this workshop FAR exceeded my expectations!',
+        },
+        {
+            description: 'The discussions around privacy and risk were valuable, but what Nick and Lauren brought to bear really was a different way of thinking about PIAs and privacy risks. Add in getting a truly exceptional PIA template, and signing up for this course is a no-brainer. Highly recommend for any privacy professional, and information management professional who deals with privacy as part of their role.',
+        },
+        ]}>
+</div>
+    
+
+  <!--TOOLKIT -->
+
+<Steps
+    id="toolkit"
+    tagline="PIA Toolkit"
+    title="A PIA is a process, not an activity."
+    subtitle="No matter which PIA template you use, it doesn't just magically run itself. You need to define the policy, workflow, and governance."
+    isReversed={true}
+    items={[
+      {
+        title: 'Workflow',
+        description: 'Documented procedure for intake, data collection, triage, and escalation',
+        icon: 'tabler:arrow-right',
+      },
+      {
+        title: 'Roles and Responsibilities',
+        description: 'Who does what when it comes to initiating, completing, and reviewing the PIA',
+        icon: 'tabler:arrow-right',
+      },
+      {
+        title: 'User Training',
+        description: 'Guidance for business teams on how to complete the PIA (not how to become privacy experts)',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/tools2.png',
+      alt: '',
+    }}
+  />
+
+
+  <!--SUPPORT -->
+
+<Nolist
+    id="support"
+    tagline="PIA Expert Support"
+    title="Sometimes you wish you had a privacy expert on speed dial - now you do."
+    subtitle="Our experienced consultants offer an objective, experienced perspective."
+    isReversed={false}
+    actions={[
+        {variant: 'primary', target: '_blank', text: 'How we help with PIAs', href: 'https://heyzine.com/flip-book/dd58653c15.html', icon:'tabler:download'},
+        {variant: 'tertiary', target: '_blank', text: 'Support FAQ', href: '#faqsupport', icon:'tabler:info-hexagon'}, 
+]}
+    items={[
+      {
+        title: '',
+        description: 'Empower your team by giving them access to senior privacy experts who can help answer questions when you’re not available. We can provide a second set of eyes, constructive feedback, and guidance based on decades of experience. we also offer privacy coaching for individuals and teams who want to be more business-savvy privacy professionals.' 
+      }
+    ]}
+    image={{
+      src: '~/assets/images/support2.png',
+      alt: '',
+    }}
+  />
+
+<!-- FAQ FOR TEMPLATE -->
+
+   <FAQs 
+  id="faqtemplate"
+  tagline="FAQ"
+  title="PIA Template"
+  subtitle=""
+  columns={1}
+  items={[
+      {
+        title: 'How does The Privacy Pro PIA Template compare to OneTrust, TrustArc, and other tools?',
+        description: 'The Privacy Pro PIA Template is a lightweight, Excel-based alternative to privacy management software like OneTrust or TrustArc. It is faster to deploy, easier to adapt, and designed to reflect how privacy works in practice within real organizations.<br><br>Instead of following a checklist for each law, it focuses on helping teams make informed decisions, document risks clearly, and align with internal business processes.', 
+      },
+       {
+        title: 'Is the PIA Template suitable for AI or advanced data processing use cases?',
+        description: 'Yes. The PIA Template supports emerging privacy challenges, including artificial intelligence, machine learning, and automated decision-making. It helps teams consider the use of AI and other advanced technologies in the business context in which they are used.', 
+      },
+      {
+        title: 'What industries use The Privacy Pro PIA Template?',
+        description: 'The PIA Template is used across industries in the private sector including technology, finance, retail, entertainment, e-commerce, and nonprofit sectors. It works for companies in both regulated and unregulated industries that need to identify privacy risks and comply with data protection laws.', 
+      },
+      {
+        title: 'Is the PIA Template a software tool?',
+        description: 'No. The Privacy Pro PIA Template is an Excel-based tool, not a software application. It requires no logins, no onboarding, and no configuration. It is designed for immediate use by teams who want a simple and effective way to manage privacy risks.', 
+      },      
+      {
+        title: 'I work in a large organization. Is an Excel workbook going to be enough for us?',
+        description: 'Yes, especially at the beginning. Large companies often use the Excel-based PIA Template to define their privacy workflows before investing in software. This allows teams to test processes, align on business needs, and avoid building around tools that may not fit.', 
+      },
+      {
+        title: 'What if we already have a PIA Tool?',
+        description: 'Many of our clients use software tools but choose the Privacy Pro PIA Template to fill gaps or simplify their process. The template can be used on its own or alongside platforms like OneTrust or TrustArc, especially when software is too complex or time consuming to configure.', 
+      },
+      {
+        title: 'Can I see the PIA Template before I purchase it?',
+        description: 'Of course! Feel free to send a message or book a call.', 
+      },
+      {
+        title: 'How often is the PIA Template updated?',
+        description: 'As often as it needs to be! Our goal is to update it as infrequently as possible. As new privacy laws are introduced, we have added questions or clarifying guidance. As of today, we are on PIA Template v2.0.', 
+      },
+    ]}
+   />
+
+  <!-- FAQ FOR TRAINING -->
+
+<FAQs 
+  id="faqtraining"
+  tagline="FAQ"
+  title="PIA Training"
+  subtitle=""
+  columns={1}
+  items={[
+      {
+        title: 'When is the next PIA Training or Workshop?',
+        description: 'We are not currently offering public (open-enrollment) Privacy Impact Assessment (PIA) training workshops. All workshops are delivered privately to organizations so we can tailor the content, examples, and discussions to your team’s specific challenges and privacy goals.',
+      },
+      {
+        title:'Is the PIA Workshop suitable for beginners?',
+        description: 'Yes, the PIA training is designed for privacy professionals at all levels. While a basic understanding of privacy principles (such as data minimization, purpose limitation, or lawful basis) is helpful, we adapt the training to meet your team where they are. It’s practical, hands-on, and grounded in real-world privacy risk scenarios.',
+      },
+      {
+        title: 'Can we invite our vendor, partner, consultant, or outside counsel to join the workshop?',
+        description: 'Generally, our Privacy Impact Assessment Workshops are designed for internal teams from the same organization, including long-term contractors. This allows for open discussion and alignment on privacy risk, compliance responsibilities, and decision-making. If you would like to include a trusted third party, let us know, we are open to case-by-case exceptions.',
+      },
+      {
+        title: 'Who teaches the PIA Workshop?',
+        description: 'Workshops are led by Lauren Reid, Founder and CEO of The Privacy Pro, and the creator of the Privacy Pro PIA Template. With 20+ years of global experience in privacy, compliance, and risk, Lauren brings practical insight and deep expertise to every training session.',
+      },
+      {
+        title: 'Can The Privacy Pro come to our offices?',
+        description: 'Yes! While we offer most training virtually, we are happy to deliver the PIA Workshop in person for clients who prefer onsite collaboration. In-person workshops can create stronger team alignment and more dynamic discussion which is especially useful for complex or cross-functional teams.',
+      },
+      {
+        title: 'Can I get a preview of the case studies used in training?',
+        description: 'Yes. We’re happy to share a brief overview of the case studies we use in our workshops, including topics like location data in mobile apps, AI in hiring, and B2B sales workflows. These scenarios reflect real-world privacy challenges and are designed to help your team navigate uncertainty, competing priorities, and risk tradeoffs.',
+      },
+      {
+        title: 'Do we get access to the PIA template after the workshop?',
+        description: 'The standard PIA Workshop does not include the Privacy Pro PIA Template by default, but it is available as an optional add-on. If you would like your team to continue using the same tool after training, let us know and we will include a quote with the appropriate licensing and customization options.',
+      },
+    ]}
+   />
+
+<!-- FAQ FOR SUPPORT -->
+
+   <FAQs 
+  id="faqsupport"
+  tagline="FAQ"
+  title="PIA Expert Support"
+  subtitle=""
+  columns={1}
+  items={[
+      {
+        title: 'Can we use our expert support hours on other issues, or is it limited to PIAs?',
+        description: 'Your choice! When we meet, we will discuss how to get the most value out of the expert sessions.', 
+      },
+      {
+        title: 'Can we get expert support if we are not using The Privacy Pro PIA Template?',
+        description: 'Yes. The PIA Template is just there to facilitate a conversation. It is the context that matters.', 
+      },
+      {
+        title: 'Do you offer individual support for privacy professionals?',
+        description: 'Yes. If you’re a privacy leader looking to support your team, or an early- to mid-career privacy professional looking for coaching, we can help!', 
+      },
+      {
+        title: 'Does The Privacy Pro provide legal advice?',
+        description: 'No, but when you need legal advice we can help you by looping in one of our trusted colleagues with expertise on the subject matter.', 
+      },          
+    ]}
+   />
+
+</Layout>

@@ -43,6 +43,37 @@ const { language, textDirection } = I18N;
   <body class="antialiased text-default bg-page tracking-tight">
     <slot />
 
+<!-- BACK TO TOP BUTTON -->
+
+<button id="backToTop"
+  class="hidden fixed bottom-6 right-6 z-50 py-2 px-4 text-primary rounded-full shadow-lg bg-white hover:bg-accent transition"
+  aria-label="Back to top"
+>
+↑
+</button>
+
+<script is:inline>
+  const btn = document.getElementById('backToTop');
+
+  function toggleBtn() {
+    // show after you've scrolled a bit; avoids header-detection weirdness
+    btn.classList.toggle('hidden', window.scrollY < 400);
+  }
+
+  window.addEventListener('scroll', toggleBtn, { passive: true });
+  window.addEventListener('load', toggleBtn);
+  toggleBtn();
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<BasicScripts />
+
+
     <BasicScripts />
+
+
   </body>
 </html>

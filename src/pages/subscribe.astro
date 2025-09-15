@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Subscribe',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <HeroText 
+    tagline="Subscribe"
+    title="Emails from The Privacy Pro"
+    subtitle="No spam. Occasional updates, event invitations, and practical privacy tips." />
+ 
+<section class="max-w-5xl mx-auto px-4 sm:px-6">
+
+  <div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full mb-10">
+
+    <form class="js-cm-form" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="191722FC90141D02184CB1B62AB3DC267C451A6113320FB9A30E190E3291F249E2A2E70E6DF1310F50939F19E91180CF0480430FB853C8B59B1C0E61C9E64F1C">
+    
+      <div class="py-4">
+        <label for="fieldName" class="block text-sm font-medium text-muted mb-1">Name</label>
+        <input
+          id="fieldName"
+          name="cm-name"
+          maxlength="200"
+          placeholder="Name"
+          class="block w-full rounded-md border border-gray-300 bg-white dark:bg-slate-800 text-default dark:text-slate-200 px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+        />
+      </div>
+
+      <div class="py-4">
+        <label for="fieldEmail" class="block text-sm font-medium text-muted mb-1">Email*</label>
+        <input
+          id="fieldEmail"
+          type="email"
+          name="cm-julrurd-julrurd"
+          maxlength="200"
+          autocomplete="email"
+          required
+          class="block w-full rounded-md border border-gray-300 bg-white dark:bg-slate-800 text-default dark:text-slate-200 px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary js-cm-email-input qa-input-email"
+        />
+      </div>
+
+      <div class="py-4">
+        <label for="fieldjhjruiu" class="block text-sm font-medium text-muted mb-1">Company</label>
+        <input
+          id="fieldjhjruiu"
+          name="cm-f-jhjruiu"
+          maxlength="200"
+          class="block w-full rounded-md border border-gray-300 bg-white dark:bg-slate-800 text-default dark:text-slate-200 px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+        />
+      </div>
+
+      <div class="py-4">
+        <label for="fieldjhjrudl" class="block text-sm font-medium text-muted mb-1">Title</label>
+        <input
+          id="fieldjhjrudl"
+          name="cm-f-jhjrudl"
+          maxlength="200"
+          class="block w-full rounded-md border border-gray-300 bg-white dark:bg-slate-800 text-default dark:text-slate-200 px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary w-full sm:w-auto whitespace-nowrap my-4"
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Required for CM form to work -->
+<script
+  is:inline
+  data-astro-reload
+  src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js">
+</script>
+
+</Layout>
