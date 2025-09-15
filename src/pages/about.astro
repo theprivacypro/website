@@ -7,8 +7,6 @@ import Nolist from '~/components/widgets/Nolist.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
-import { ClientAddressNotAvailable } from 'node_modules/astro/dist/core/errors/errors-data';
-
 const metadata = {
   title: 'About The Privacy Pro',
 };
@@ -94,10 +92,10 @@ const metadata = {
 
   <div class="bg-blue-50 py-5">
   <CallToAction
-    id="cta",
-    tagline="Let's get started",
-    title="Build real skills. Drive real decisions.",
-    subtitle="We can help you become a business-savvy privacy pro.",
+    id="cta"
+    tagline="Let's get started"
+    title="Build real skills. Drive real decisions."
+    subtitle="We can help you become a business-savvy privacy pro."
     actions={[
       {
         variant: 'primary',

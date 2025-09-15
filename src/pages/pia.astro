@@ -7,7 +7,6 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
 import Nolist from '~/components/widgets/Nolist.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import { ClientAddressNotAvailable } from 'node_modules/astro/dist/core/errors/errors-data';
 
 const metadata = {
   title: 'Privacy Impact Assessments',
@@ -21,7 +20,6 @@ const metadata = {
     tagline="Privacy Impact Assessments"
     title="Keep it simple. Get it done."
     subtitle="Maybe someday an expensive software solution will perform magic. Until then, use something that actually works."
-    isReversed={false}
     image={{
       src: '~/assets/images/piabrochurecover.jpg',
       alt: 'Thumbnail of the cover of the brochure about Privacy Impact Assessments, opens a third party viewer (Heyzine). The same content is available as a PDF download.',
@@ -91,7 +89,7 @@ const metadata = {
         {
             description: 'And in comparison to the jargon-heavy legalese templates from many regulators and law firms, The Privacy Pro template is easily accessible for folks who don’t speak privacy-specific jargon.',
         },
-        ]}>
+        ]} />
 </div>
 
 <!-- GET STARTED (4 COL) -->
@@ -109,7 +107,6 @@ const metadata = {
         callToAction: {
           href: '#templatefaq',
           text: 'FAQ',
-          variant: 'accent',
           icon: 'tabler:arrow-right',
           class: 'text-primary',
         },
@@ -126,7 +123,6 @@ const metadata = {
         callToAction: {
           href: '#training',
           text: 'Learn more',
-          variant: 'accent',
           icon: 'tabler:arrow-right',
           class: 'text-primary',
 
@@ -145,7 +141,6 @@ const metadata = {
         callToAction: {
           href: '#toolkit',
           text: 'Learn more',
-          variant: 'accent',
           icon: 'tabler:arrow-right',
           class: 'text-primary',
         },
@@ -163,7 +158,6 @@ const metadata = {
         callToAction: {
           href: '#support',
           text: 'Learn more',
-          variant: 'accent',
           icon: 'tabler:arrow-right',
           class: 'text-primary',
         },
@@ -227,7 +221,7 @@ const metadata = {
         {
             description: 'The discussions around privacy and risk were valuable, but what Nick and Lauren brought to bear really was a different way of thinking about PIAs and privacy risks. Add in getting a truly exceptional PIA template, and signing up for this course is a no-brainer. Highly recommend for any privacy professional, and information management professional who deals with privacy as part of their role.',
         },
-        ]}>
+        ]} />
 </div>
     
 
@@ -292,10 +286,10 @@ const metadata = {
 
   <div class="bg-blue-50 py-5">
   <CallToAction
-    id="cta",
-    tagline="Let's get started",
-    title="Build real skills. Drive real decisions.",
-    subtitle="We can help you become a business-savvy privacy pro.",
+    id="cta"
+    tagline="Let's get started"
+    title="Build real skills. Drive real decisions."
+    subtitle="We can help you become a business-savvy privacy pro."
     actions={[
       {
         variant: 'primary',

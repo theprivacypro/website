@@ -1,22 +1,13 @@
 ---
-import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
-import Button from '~/components/ui/Button.astro';
-import Image from '~/components/common/Image.astro';
 import type { Steps as Props } from '~/types';
 
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
-  actions = await Astro.slots.render('actions'),
   items = [],
-  isReversed = false,
-
-  // new: optional image slot (right column)
-  image = await Astro.slots.render('image'),
-
   id,
   isDark = false,
   classes = {},
@@ -24,7 +15,7 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container ?? ''} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={typeof classes === 'string' ? classes : (typeof classes?.container === 'string' ? classes.container : '')} bg={bg}>
   <div class="relative max-w-3xl mx-auto py-6 px-4 sm:px-6 bg-white shadow-lg">
     
       <!-- headline -->

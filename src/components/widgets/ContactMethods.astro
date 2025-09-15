@@ -2,7 +2,36 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
-import type { Features as Props } from '~/types';
+
+type ClassMap = Record<string, string>
+type CTA = { href?: string; text?: string; target?: string }
+
+export interface Item {
+  // you cloned from Features, so these exist in your markup:
+  title?: string
+  description?: string
+  classes?: ClassMap
+
+  // and these are specific to ContactMethods:
+  label?: string
+  icon?: string
+  href?: string
+  target?: string
+  callToAction?: CTA
+}
+
+interface Props {
+  title?: string
+  subtitle?: string
+  tagline?: string
+  items?: Item[]
+  columns?: number
+  defaultIcon?: string
+  id?: string
+  isDark?: boolean
+  classes?: ClassMap
+  bg?: string
+}
 
 const {
   title = await Astro.slots.render('title'),
@@ -11,16 +40,16 @@ const {
   items = [],
   columns = 3,
   defaultIcon,
-
   id,
   isDark = false,
-  classes = {},
+  classes = {} as ClassMap,
   bg = await Astro.slots.render('bg'),
-} = Astro.props;
+} = Astro.props as Props
 ---
 
+
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
 <ItemGrid2
   items={items.map((item) => {
@@ -51,7 +80,6 @@ const {
       panel:
         'rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6',
       icon: 'w-12 h-12 mb-6 text-primary',
-      ...((classes?.items as Record<string, never>) ?? {}),
-    }}
+  ...((typeof classes?.items === 'object' ? (classes.items as Record<string, string>) : {})),    }}
   />
 </WidgetWrapper>
