@@ -85,6 +85,10 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
+.aw-link-active {
+  @apply text-primary dark:text-white;
+}
+
 /* To deprecated */
 
 .dd *:first-child {

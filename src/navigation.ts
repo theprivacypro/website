@@ -8,25 +8,9 @@ export const headerData = {
     },
     {
       text: 'About',
-      links: [
-        {
-          text: 'Subscribe',
-          href: '/subscribe',
-        },
-        {
-          text: 'Philosophy',
-          href: '/philosophy',
-        },
-        {
-          text: 'Approach',
-          href: '/philosophy#approach',
-        },
-      ],
+      href: '/about',
     },
   ],
-
-
-
 
 };
 
@@ -35,20 +19,20 @@ export const footerData = {
     {
       title: 'SERVICES',
       links: [
-        { text: 'PIA Toolkit', href: '/pia' },
-        { text: 'Executive Consulting', href: '#' },
-        { text: 'Keynote Speaker', href: '#' },
+        { text: 'PIA Training & Tools', href: '/pia' },
+        { text: 'Privacy Consulting', href: '/about#services' },
+        //{ text: 'Keynote Speaker', href: '/about#lauren' },
       ],
     },
     {
       title: 'ABOUT',
       links: [
-        { text: 'About The Privacy Pro', href: '#' },
+        { text: 'About The Privacy Pro', href: '/about' },
         //{ text: 'Events', href: '#' },
         //{ text: 'Blog', href: '#' },
-        { text: 'Values', href: '#' },
-        //{ text: 'FAQ', href: '#' },
-        { text: 'Contact', href: '#' },
+        { text: 'Values', href: '/about#values' },
+        { text: 'FAQ', href: '/about#faq' },
+        { text: 'Contact', href: '/contact' },
       ],
     },
   ],

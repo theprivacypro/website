@@ -1,19 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Nolist from '~/components/widgets/Nolist.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Hero3 from '~/components/widgets/Hero3.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import CallToAction2 from '~/components/widgets/CallToAction2.astro';
+import Nolist from '~/components/widgets/Nolist.astro';
+
 
 const metadata = {
   title: 'The Privacy Pro - Essential training, tools, and support for privacy professionals to turn knowledge into action.',
@@ -34,83 +24,52 @@ const metadata = {
   >
     <Fragment slot="title">
         Privacy is complex, but<br>
-        <span class="text-primary dark:text-white"> it doesn't have to be hard.</span>    
+        <span class="text-secondary dark:text-white"> it doesn't have to be hard.</span>    
     </Fragment>
     
-  </Hero2>
+  </HeroText>
 
-    <!-- CTA -->
 
+  <!-- PHILOSOPHY -->
+
+  <Nolist
+    id="philosophy"
+    tagline="Philosophy"
+    subtitle="We equip you with the tools, skills, and mindset to implement a privacy program that works for both privacy and the business."
+    isReversed={true} 
+    image={{
+      src: '~/assets/images/business.png',
+      alt: '',
+    }}
+   actions={[
+        {variant: 'primary', target: '_self', text: 'Learn more about how we help', href: '/about#services', icon:'tabler:arrow-right'},  
+        ]}  
+    >
+    <Fragment slot="title">
+      Business objectives should drive the privacy strategy...<br><span class="text-primary dark:text-white"> not the other way around.</span>
+    </Fragment>
+    
+  </Nolist>
+
+
+<!-- CTA -->
+
+  <div class="bg-blue-50 py-5">
   <CallToAction
     id="cta",
-    tagline="Get started",
-    title="Become a business-savvy privacy pro",
-    subtitle="Build real skills. Drive real decisions.",
+    tagline="Let's get started",
+    title="Build real skills. Drive real decisions.",
+    subtitle="We can help you become a business-savvy privacy pro.",
     actions={[
       {
         variant: 'primary',
-        text: 'Learn how',
-        href: '/',
-        target: '',
+        text: 'Get in touch',
+        href: '/contact',
+        target: '_self',
         icon: 'tabler:arrow-right',
       },
     ]}
   />
-
-  <!--PHILOSOPHY -->
-
-  <Hero2
-    id="philosophy",
-    tagline="Philosophy",
-    isReversed="",
-    actions={[
-      {
-        variant: 'tertiary',
-        text: 'Learn more about our philosophy',
-        href: '/about/philosophy',
-        target: '_self',
-        icon: 'tabler:arrow-right',
-      },
-    ]}
-    image={{ src: '~/assets/images/business.png', alt: '' }}
-  >
-    <Fragment slot="title">
-        Business objectives should drive the privacy strategy...
-        <span class="text-primary dark:text-white"> not the other way around.</span>    
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      To be an effective business partner, you have to center the business context, not the regulatory rules. That <span class="font-semibold">mindset shift</span> is the first step toward building trust and influence.
-    </Fragment>
-
-  </Hero2>
-
-  
-  <!--APPROACH -->
-
-  <Hero2
-    id="approach",
-    tagline="Approach"
-    title="Knowing the law isn’t the same as knowing what to do."
-    isReversed="true",
-    actions={[
-      {
-        variant: 'tertiary',
-        text: 'Learn more about our approach',
-        href: '/about/philosophy#approach',
-        target: '_self',
-        icon: 'tabler:arrow-right',
-      },
-    ]}
-    image={{ src: '~/assets/images/clarity.png', alt: '', }}
-  >
-
-    <Fragment slot="subtitle">
-      There is no shortage of privacy frameworks, certifications, or high-level advice. But most privacy professionals are still left wondering: <em>“Okay, but how do I actually do this at my organization?”</em> That’s where we come in.
-    </Fragment>
-
-  </Hero2>
-
-
+</div>
 
 </Layout>

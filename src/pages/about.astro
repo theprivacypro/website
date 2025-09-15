@@ -1,228 +1,238 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Nolist from '~/components/widgets/Nolist.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+import { ClientAddressNotAvailable } from 'node_modules/astro/dist/core/errors/errors-data';
 
 const metadata = {
-  title: 'About us',
+  title: 'About The Privacy Pro',
 };
 ---
-
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
+<!--HERO -->
+
+<HeroText
+    tagline="About The Privacy Pro"
+    title="Essential training, tools, and support for privacy professionals to turn knowledge into action."
+    subtitle="Boutique consultancy specializing in privacy and data policy for B2B SaaS, fintech, and consumer technology companies. "
+/>
+
+<!-- SERVICES -->
+
+<Steps
+  id="services"
+  tagline="Services"
+  subtitle="We help you simplify, prioritize, and execute."
+  isReversed={false}    
+  image={{
+    src: '~/assets/images/context.png',
+    alt: '',
+  }}
+  items={[
+     {
+      title: 'Privacy Maturity',
+      description: 'Going from managed to optimized often means simplifying to make room for what matters. If you’re tired of debating cookie-banner wording, you need well-defined governance, a clear risk appetite, and strong guardrails.',
+      icon: 'tabler:stairs-up',
+    },
+   {
+      title: 'Data Process Mapping',
+      description: 'Our proprietary Data Process Mapping for Privacy helps you understand how data is used and moves in contexts. It goes beyond inventories and diagrams to support informed decision making.',
+      icon: 'tabler:route',
+    },
+    {
+      title: 'The Privacy Roadmap™',
+      description: 'The Privacy Roadmap™ is a practical action plan to get from where you are to where you want to be, with specific, prioritized steps to meet risk-management and compliance goals.',
+      icon: 'tabler:map-2',
+    },    
+  ]}
+>
+
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+        <span class="text-primary dark:text-white">
+          Privacy done differently:<br></span>
+         less noise, more results.
     </Fragment>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
-    </Fragment>
-  </Hero>
 
-  <!-- Stats Widget ****************** -->
+</Steps>
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
 
-  <!-- Features3 Widget ************** -->
+<!-- CLIENTS -->
 
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
+<Steps
+  id="clients"
+  tagline="Clients"
+  title="We help privacy leaders navigate business challenges, and vice versa."
+  subtitle="Understanding privacy laws and regulations is the easy part. The real work lies in dealing with competing priorities, working with incomplete information, and facing no-win situations. We don't try to eliminate those challenges, we help you handle them with grace and efficiency."
+  isReversed={true}    
+  image={{
+    src: '~/assets/images/meeting3.png',
+    alt: '',
+  }}
+  items={[
+    {
+      title: 'Privacy Leaders',
+      description: 'In-house Privacy Professionals (CPOs, Privacy Counsel, Product Counsel) who know that an outside perspective is helpful when navigating change.',
+      icon: 'tabler:ampersand',
+    },
+    {
+      title: 'Boards and Executives',
+      description: 'Boards and executive leadership teams who are looking for candid, pragmatic advice about what is actually worth stressing about when it comes to privacy.',
+      icon: 'tabler:ampersand',
+    },
 
-  <!-- Features3 Widget ************** -->
+  ]}
+/>
 
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
+<!-- CTA -->
 
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
+  <div class="bg-blue-50 py-5">
+  <CallToAction
+    id="cta",
+    tagline="Let's get started",
+    title="Build real skills. Drive real decisions.",
+    subtitle="We can help you become a business-savvy privacy pro.",
+    actions={[
       {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        variant: 'primary',
+        text: 'Get in touch',
+        href: '/contact',
+        target: '_self',
+        icon: 'tabler:arrow-right',
       },
     ]}
   />
+</div>
 
-  <!-- Steps2 Widget ****************** -->
 
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+<!-- LAUREN -->
 
-  <!-- Features2 Widget ************** -->
+<Nolist
+  id="lauren"
+  tagline="Founder & CEO"
+  title="Lauren Reid"
+  subtitle="Lauren founded The Privacy Pro in 2016 because she wanted to work on cool projects with cool people—and she’s still doing exactly that."
+  isReversed={true}    
+  actions={[
+        {variant: 'primary', target: '_blank', text: 'Download Lauren’s Bio and CV', href: 'https://docs.google.com/document/d/1IZdvW553QBYx5Fs8U2GGi_dEKLwO2rp2gXzAMfXAzZ0/edit?usp=sharing', icon:'tabler:download'},  
+        ]}  
+  image={{
+    src: '~/assets/images/LaurenReid.png',
+    alt: 'Lauren Reid, Founder & CEO of The Privacy Pro',
+  }}
+  items={[
+    {
+      description: 'She is a globally recognized expert in privacy, risk management, and data governance with a track record of helping organizations navigate change while aligning regulatory strategy with business growth.',
+    },
+    {
+      description: 'For two decades, Lauren has helped companies make smart, practical decisions about data and risk. Her career spans senior roles across consulting, industry, and startups: leading the privacy advisory services practice at KPMG, shaping privacy and ethics at BMO, pioneering privacy software as a product owner at Nymity, and heading data governance at Sidewalk Labs.',
+    },
+    {
+      description: 'She is also a frequent speaker at privacy and tech policy events, an active contributor to global think tanks including the Information Accountability Foundation, Future of Privacy Forum, and CIPL, and a community leader with Women in AI Governance, Queers in AI Governance, and the PICCASO Awards Canada.',
+    },
+  ]}
+>
+
+</Nolist>
+
+<!-- VALUES -->
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
+    id="values"
+    tagline="Values"
+    title="How we work"
+    subtitle="What you can count on from us—and what we look for in return."  
     columns={2}
     items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+     {
+        title: 'Respect',
+        description: 'We value everyone and treat people with dignity and professionalism.<br><br>We honour each other’s time, boundaries, and ideas.<br><br>We have a strict ‘no assholes’ policy.',
+        icon: 'tabler:heart',
+        classes: {
+          icon: 'mx-auto text-accent',
+          title: 'text-center text-primary',
+          description: '',
+          },
       },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+     {
+        title: 'Integrity',
+        description: 'We build trust through responsible actions and honest relationships.<br><br>We admit when we make mistakes, and when we don’t know the answer.<br><br>We don’t sell services that clients don’t need.',
+        icon: 'tabler:compass',
+        classes: {
+          icon: 'mx-auto text-accent',
+          title: 'text-center text-primary',
+          description: '',
+          },
+      },  
+     {
+        title: 'Collaboration',
+        description: 'We treat others as colleagues, not competition.<br><br>We believe there is plenty of success to go around, and that relationships are more important than revenue.<br><br>We treat conflict as an opportunity to strengthen outcomes.',
+        icon: 'tabler:puzzle',
+        classes: {
+          icon: 'mx-auto text-accent',
+          title: 'text-center text-primary',
+          description: '',
+          },
+      },  
+     {
+        title: 'Community',
+        description: 'We use our privilege to meaningfully support causes we believe in without being performative.<br><br>We make time for pro-bono work, mentorship, or advocacy.<br><br>We work to improve the diversity, equity and inclusiveness of our team and the privacy profession overall.',
+        icon: 'tabler:world-heart',
+        classes: {
+          icon: 'mx-auto text-accent',
+          title: 'text-center text-primary',
+          description: '',
+          },
+      },                          
+    ]} />
+ 
+<!-- FAQs -->
+
+<FAQs 
+  id="faq"
+  tagline="FAQ"
+  title="Frequently Asked Questions"
+  subtitle=""
+  columns={1}
+  items={[
+    {
+      title: "What types of companies does The Privacy Pro work with?",
+      description: "We work with private sector companies and non-profit organizations of all stages and sizes. We do not work with government or healthcare institutions or providers.",
+    },
+    {
+      title: "Where is The Privacy Pro based?",
+      description: "Portland, Oregon, USA",
+    },
+    {
+      title: "Is The Privacy Pro a law firm?",
+      description: "No. We have lawyers on our team but we are not a law firm and we don’t provide legal advice.",
+    },
+    {
+      title: "Are there privacy consulting services The Privacy Pro does not offer?",
+      description: "We are no longer providing large-scale privacy program implementations, compliance assessments, audits, software implementation, or cybersecurity services. We have a network of independent consultants and specialists who do provide these services, so please get in touch if you would like a referral. We do not provide loan staff, fill temporary positions, or offer white label consulting.",
+    },
+    {
+      title: "What is The Privacy Pro Academy?",
+      description: "We launched The Privacy Pro Academy in 2023 with workshops, certification training, individual and group courses. In 2025, we brought training back under The Privacy Pro brand. We are focusing on private training for privacy teams, rather than public (open-enrollment) privacy training.",
+    },
+    {
+      title: "Does The Privacy Pro offer IAPP Certification courses?",
+      description: 'No, not anymore. We recommend checking the <a href="https://instituteofprivacydesign.org/" target="_blank" class="text-primary hover:underline">Institute for Operational Privacy by Design</a>. Jason is a world class privacy professional working in the field and has wisdom and insights to add beyond the course curriculum.',
+    },
+    {
+      title: "Is The Privacy Pro hiring?",
+      description: "No, not at this time.",
+    },
+  ]}
+/>
+
+
+
+
 </Layout>

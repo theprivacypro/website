@@ -1,21 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Hero3 from '~/components/widgets/Hero3.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Features from '~/components/widgets/Features.astro';
-import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
 import Nolist from '~/components/widgets/Nolist.astro';
-import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import { ClientAddressNotAvailable } from 'node_modules/astro/dist/core/errors/errors-data';
 
 const metadata = {
@@ -295,6 +286,28 @@ const metadata = {
       alt: '',
     }}
   />
+
+
+<!-- CTA -->
+
+  <div class="bg-blue-50 py-5">
+  <CallToAction
+    id="cta",
+    tagline="Let's get started",
+    title="Build real skills. Drive real decisions.",
+    subtitle="We can help you become a business-savvy privacy pro.",
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in touch',
+        href: '/contact',
+        target: '_self',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+  />
+</div>
+
 
 <!-- FAQ FOR TEMPLATE -->
 

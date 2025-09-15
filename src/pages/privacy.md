@@ -3,7 +3,7 @@ title: 'Privacy Notice'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: July 11, 2025
+_Last updated_: July 1, 2025
 
 Welcome
 
