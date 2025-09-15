@@ -1,24 +1,38 @@
-# build output
-dist/
-.output/
+# --- Dependencies ---
+# All the npm packages you install with "npm install".
+# Huge folder that can always be re-downloaded, so don’t store it in GitHub.
+node_modules
 
-# dependencies
-node_modules/
+# --- Astro build cache ---
+# Temporary files Astro uses during builds.
+# Safe to delete, always regenerated.
+.astro
 
-# logs
+# --- Production build output ---
+# The finished website after running "npm run build".
+# Netlify will build this itself every time, so don’t upload it.
+dist
+
+# --- System / OS junk files ---
+# macOS Finder settings files. Useless in Git.
+.DS_Store
+
+# --- Logs ---
+# Error or debug logs created by Node, npm, or your editor.
+# These can change constantly and aren’t part of your source code.
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
+# --- Environment files ---
+# If you create a .env file for API keys or secrets, don’t publish it.
+# (You’ll add those securely in Netlify instead.)
 .env
-.env.production
+.env.*.local
 
-# macOS-specific files
-.DS_Store
-
-pnpm-lock.yaml
-
-.astro
+# --- Editor settings ---
+# Local project settings for VS Code or other editors.
+# Not needed in GitHub, since they’re personal to your machine.
+.vscode/
+.idea/
