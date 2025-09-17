@@ -1,16 +1,41 @@
 ---
+
+//* Import Layout
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Nolist from '~/components/widgets/Nolist.astro';
+
+//* Import Components
+
 import CallToAction from '~/components/widgets/CallToAction.astro';
+//* import CallToAction2 from '~/components/widgets/CallToAction2.astro';
+//* import Contact from '~/components/widgets/Contact.astro';
+//* import ContactMethods from '~/components/widgets/ContactMethods.astro';
+//* import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+//* import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+//* import Features3 from '~/components/widgets/Features3.astro';
+//* import Hero from '~/components/widgets/Hero.astro';
+//* import Hero2 from '~/components/widgets/Hero2.astro';
+//* import Hero3 from '~/components/widgets/Hero3.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Nolist from '~/components/widgets/Nolist.astro';
+//* import Note from '~/components/widgets/Note.astro';
+import Steps from '~/components/widgets/Steps.astro';
+//* import Steps2 from '~/components/widgets/Steps2.astro';
+//* import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
+
+//* Import Images
+
+import { context, meeting3, } from '../utils/siteimages.js';
+import LaurenReid from '../assets/images/LaurenReid.png';
 
 const metadata = {
   title: 'About The Privacy Pro',
+  description: 'Boutique consultancy specializing in privacy, data governance, compliance, and regualtory policy for B2B SaaS, fintech, and consumer technology companies.',
 };
+
 ---
+
 <Layout metadata={metadata}>
 
 <!--HERO -->
@@ -26,10 +51,11 @@ const metadata = {
 <Steps
   id="services"
   tagline="Services"
+  title='<span class="text-primary dark:text-white">Privacy done differently:<br></span>less noise, more results.'
   subtitle="We help you simplify, prioritize, and execute."
   isReversed={false}    
   image={{
-    src: '~/assets/images/context.png',
+    src: context,
     alt: '',
   }}
   items={[
@@ -49,16 +75,7 @@ const metadata = {
       icon: 'tabler:map-2',
     },    
   ]}
->
-
-    <Fragment slot="title">
-        <span class="text-primary dark:text-white">
-          Privacy done differently:<br></span>
-         less noise, more results.
-    </Fragment>
-
-
-</Steps>
+/>
 
 
 <!-- CLIENTS -->
@@ -70,7 +87,7 @@ const metadata = {
   subtitle="Understanding privacy laws and regulations is the easy part. The real work lies in dealing with competing priorities, working with incomplete information, and facing no-win situations. We don't try to eliminate those challenges, we help you handle them with grace and efficiency."
   isReversed={true}    
   image={{
-    src: '~/assets/images/meeting3.png',
+    src: meeting3,
     alt: '',
   }}
   items={[
@@ -103,7 +120,7 @@ const metadata = {
         href: '/contact',
         target: '_self',
         icon: 'tabler:arrow-right',
-      },
+      }
     ]}
   />
 </div>
@@ -121,7 +138,7 @@ const metadata = {
         {variant: 'primary', target: '_blank', text: 'Download Lauren’s Bio and CV', href: 'https://docs.google.com/document/d/1IZdvW553QBYx5Fs8U2GGi_dEKLwO2rp2gXzAMfXAzZ0/edit?usp=sharing', icon:'tabler:download'},  
         ]}  
   image={{
-    src: '~/assets/images/LaurenReid.png',
+    src: LaurenReid,
     alt: 'Lauren Reid, Founder & CEO of The Privacy Pro',
   }}
   items={[

@@ -1,0 +1,84 @@
+---
+const {
+  id = '',
+  tagline = '',
+  title = '',
+  subtitle = '',
+  image = null,
+  actions = [],
+  items = [],
+} = Astro.props;
+---
+<!--
+<section 
+    id={id} 
+    class="py-12">
+
+** REMOVE THIS TO UNCOMMENT EVERYTHING  
+
+ <!-- Tagline 
+
+    {tagline && <p class="text-sm uppercase tracking-wide opacity-70">
+        {tagline}
+    </p>}
+
+** CLOSE EACH OF THESE COMMENT TAGS LATER
+
+ <!-- Title 
+
+    {title && <h2 class="mt-2 text-3xl">
+        {title}
+    </h2>}
+
+ <!-- Subtitle 
+
+    {subtitle && <p class="mt-3 text-lg opacity-80">
+        {subtitle}
+    </p>}
+
+ <!-- Image 
+
+    {image && (
+        <img 
+            src={image.src} 
+            alt={image.alt || ''} 
+            class="mt-6 w-full max-w-md" 
+        />
+    )}
+
+  <!-- Buttons 
+
+    {actions.length > 0 && (<div class="mt-6 flex gap-4">
+        {actions.map((action) => (
+            <a
+                href={action.href}
+                target={action.target || '_self'}
+                class={`px-4 py-2 rounded ${
+                action.style === 'primary'
+                    ? 'bg-blue-600 text-white'
+                    : action.style === 'secondary'
+                    ? 'bg-gray-200 text-black'
+                    : 'bg-transparent underline'
+                }`}
+            >
+                {action.text}
+            </a>
+        ))}
+    {items.length > 0 && (
+        <ul class="mt-8 space-y-4">
+        {items.map((it) => (
+            <li class="flex items-start gap-3">
+            {it.icon && <span class="mt-1">{it.icon}</span>}
+                <div>{it.title && <div class="font-medium">{it.title}</div>}
+                {it.description && <p class="opacity-80">{it.description}</p>}
+                </div>
+            </li>
+        ))}
+        </ul>
+    )}
+  </div>
+)}
+
+ <!-- Buttons -->
+  
+</section>

@@ -1,9 +1,34 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Nolist from '~/components/widgets/Nolist.astro';
 
+//* Import Layout
+import Layout from '~/layouts/PageLayout.astro';
+
+//* Import Components
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+//* import CallToAction2 from '~/components/widgets/CallToAction2.astro';
+//* import Contact from '~/components/widgets/Contact.astro';
+//* import ContactMethods from '~/components/widgets/ContactMethods.astro';
+//* import Content from '~/components/widgets/Content.astro';
+//* import FAQs from '~/components/widgets/FAQs.astro';
+//* import Features from '~/components/widgets/Features.astro';
+//* import Features2 from '~/components/widgets/Features2.astro';
+//* import Features3 from '~/components/widgets/Features3.astro';
+//* import Hero from '~/components/widgets/Hero.astro';
+//* import Hero2 from '~/components/widgets/Hero2.astro';
+//* import Hero3 from '~/components/widgets/Hero3.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Nolist from '~/components/widgets/Nolist.astro';
+//* import Note from '~/components/widgets/Note.astro';
+//* import Steps from '~/components/widgets/Steps.astro';
+//* import Steps2 from '~/components/widgets/Steps2.astro';
+//* import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
+
+//* Import Images
+
+import { business } from '../utils/siteimages.js';
+
+export const prerender = true;
 
 const metadata = {
   title: 'The Privacy Pro - Essential training, tools, and support for privacy professionals to turn knowledge into action.',
@@ -33,19 +58,18 @@ const metadata = {
   <Nolist
     id="philosophy"
     tagline="Philosophy"
+    title='Business objectives should drive the privacy strategy...<br><span class="text-primary dark:text-white"> not the other way around.</span>',
     subtitle="We equip you with the tools, skills, and mindset to implement a privacy program that works for both privacy and the business."
     isReversed={true} 
     image={{
-      src: '~/assets/images/business.png',
+      src: business,
       alt: '',
     }}
    actions={[
         {variant: 'primary', target: '_self', text: 'Learn more about how we help', href: '/about#services', icon:'tabler:arrow-right'},  
         ]}  
     >
-    <Fragment slot="title">
-      Business objectives should drive the privacy strategy...<br><span class="text-primary dark:text-white"> not the other way around.</span>
-    </Fragment>
+
     
   </Nolist>
 

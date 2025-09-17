@@ -185,9 +185,9 @@ metadata:
   openGraph:
     site_name: 'Example'
     images:
-      - url: '~/assets/images/default.png'
+      - url: '/images/tpplogo.svg'
         width: 1200
-        height: 628
+        height: 630
     type: website
   twitter:
     handle: '@twitter_user'

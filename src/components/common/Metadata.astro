@@ -8,7 +8,7 @@ import { SITE, METADATA, I18N } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
-import { adaptOpenGraphImages } from '~/utils/images';
+import { adaptOpenGraphImages } from '../../utils/images';
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -63,6 +63,7 @@ const seoProps: AstroSeoProps = merge(
     twitter: twitter,
   }
 );
+
 ---
 
-<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+<AstroSeo {...seoProps} />

@@ -11,16 +11,16 @@ metadata:
   title:
     default: The Privacy Pro
     template: '%s — The Privacy Pro'
-  description: "\U0001F680 Essential training, tools, and support for privacy professionals to turn knowledge into action."
+  description: "Privacy consulting for companies with high risk data processing activities. Privacy Impact Assessment (PIA) template and procedure. Coaching for privacy professionals and lawyers."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: The Privacy Pro
     images:
-      - url: '~/assets/images/default.png'
+      - url: '/images/tpplogo.svg'
         width: 1200
-        height: 628
+        height: 630
     type: website
 
 i18n:

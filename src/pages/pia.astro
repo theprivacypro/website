@@ -1,16 +1,39 @@
 ---
+
+//* Import Layout
 import Layout from '~/layouts/PageLayout.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
-import Nolist from '~/components/widgets/Nolist.astro';
+
+//* Import Components
+
 import CallToAction from '~/components/widgets/CallToAction.astro';
+//* import CallToAction2 from '~/components/widgets/CallToAction2.astro';
+//* import Contact from '~/components/widgets/Contact.astro';
+//* import ContactMethods from '~/components/widgets/ContactMethods.astro';
+//* import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+//* import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+//* import Features3 from '~/components/widgets/Features3.astro';
+//* import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+//* import Hero3 from '~/components/widgets/Hero3.astro';
+//* import HeroText from '~/components/widgets/HeroText.astro';
+import Nolist from '~/components/widgets/Nolist.astro';
+//* import Note from '~/components/widgets/Note.astro';
+import Steps from '~/components/widgets/Steps.astro';
+//* import Steps2 from '~/components/widgets/Steps2.astro';
+import Testimonialsimple from '~/components/widgets/Testimonialsimple.astro';
+
+//* Import Images
+
+import { meeting2, training1, support2, tools2 } from '../utils/siteimages.js';
+import piabrochurecover from '../assets/images/piabrochurecover.jpg';
 
 const metadata = {
   title: 'Privacy Impact Assessments',
+  description: 'Global PIA template meets GDPR, CCPA, Colorado, Oregon, California, Maryland compliance requirements. Accountability and Privacy by Design.',
 };
+
 ---
 <Layout metadata={metadata}>
 
@@ -21,17 +44,16 @@ const metadata = {
     title="Keep it simple. Get it done."
     subtitle="Maybe someday an expensive software solution will perform magic. Until then, use something that actually works."
     image={{
-      src: '~/assets/images/piabrochurecover.jpg',
+      src: piabrochurecover,
       alt: 'Thumbnail of the cover of the brochure about Privacy Impact Assessments, opens a third party viewer (Heyzine). The same content is available as a PDF download.',
       href: 'https://heyzine.com/flip-book/dd58653c15.html',
       target: '_blank',
     }}
     actions={[
-        {variant: 'primary', target: '_self', text: 'Let’s chat', href: '/', icon:'tabler:phone'},
-        {variant: 'tertiary', target: '_blank', text: 'Download PIA Brochure', href: 'https://heyzine.com/flip-book/dd58653c15.html', icon:'tabler:download'},
-
+        {variant: 'primary', target: '_blank', text: "Let's chat", href: 'https://calendly.com/theprivacypro', icon:'tabler:phone'},
     ]}
     />
+
 
 <!-- HEYZINE BROCHURE EMBEDDED
 
@@ -51,7 +73,7 @@ const metadata = {
     subtitle="Be a business-savvy privacy pro and spend time on what actually matters."
     isReversed={true}    
     image={{
-      src: '~/assets/images/meeting2.png',
+      src: meeting2,
       alt: '',
     }}
     items={[
@@ -152,8 +174,7 @@ const metadata = {
       },
       {
         title: 'Expert Support',
-        description:
-          "Expert help when you're stuck, overwhelmed, or need a second set of eyes",
+        description: 'Expert help when you’re stuck, overwhelmed, or need a second set of eyes',
         icon: 'tabler:messages',
         callToAction: {
           href: '#support',
@@ -174,17 +195,17 @@ const metadata = {
 
 <!-- TRAINING (WORKSHOP) -->
 
-  <Nolist
+<Nolist
   id="training"  
   tagline='PIA Training'
   title="Our popular Hands-on PIA Workshop is the best way to get your whole team on the same page."
   subtitle=""
   actions={[
         {variant: 'primary', target: '_blank', text: 'How we Help with PIAs', href: 'https://heyzine.com/flip-book/dd58653c15.html', icon:'tabler:download'},
-        {variant: 'tertiary', target: '_blank', text: 'Training FAQ', href: '#faqtraining', icon:'tabler:info-hexagon'},        
+        {variant: 'tertiary', target: '_self', text: 'Training FAQ', href: '#faqtraining', icon:'tabler:info-hexagon'},        
         ]}
   image={{
-      src: '~/assets/images/training1.png',
+      src: training1,
       alt: '',
     }}
     
@@ -251,7 +272,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/tools2.png',
+      src: tools2,
       alt: '',
     }}
   />
@@ -267,7 +288,7 @@ const metadata = {
     isReversed={false}
     actions={[
         {variant: 'primary', target: '_blank', text: 'How we help with PIAs', href: 'https://heyzine.com/flip-book/dd58653c15.html', icon:'tabler:download'},
-        {variant: 'tertiary', target: '_blank', text: 'Support FAQ', href: '#faqsupport', icon:'tabler:info-hexagon'}, 
+        {variant: 'tertiary', target: '_self', text: 'Support FAQ', href: '#faqsupport', icon:'tabler:info-hexagon'}, 
 ]}
     items={[
       {
@@ -276,7 +297,7 @@ const metadata = {
       }
     ]}
     image={{
-      src: '~/assets/images/support2.png',
+      src: support2,
       alt: '',
     }}
   />
@@ -306,7 +327,7 @@ const metadata = {
 <!-- FAQ FOR TEMPLATE -->
 
    <FAQs 
-  id="faqtemplate"
+  id="templatefaq"
   tagline="FAQ"
   title="PIA Template"
   subtitle=""

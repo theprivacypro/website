@@ -1,5 +1,6 @@
 ---
 title: 'Privacy Notice'
+description: 'The Privacy Pro privacy notice and data protection policy. Learn how we collect, use, and protect your personal information.'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

@@ -1,6 +1,7 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 
 type ClassMap = Record<string, string>
@@ -96,24 +97,21 @@ const {
       </div>
 
       <!-- right column: optional image -->
-      {
-        image && (
-          <div class={`${isReversed ? 'md:order-first [direction:ltr]' : ''}`}>
-            {typeof image === 'string' ? (
-              <Fragment set:html={image} />
-            ) : (
-            <img
-            src={typeof image?.src === 'string' ? image.src : undefined}              
-            alt={image?.alt ?? ''}
-              width={image?.width ?? 500}
-              height={image?.height ?? 500}
-              class="h-auto w-full rounded-lg"
-              loading="lazy"
-            />
-            )}
-          </div>
-        )
-      }
+
+{image && (
+  <div class={`${isReversed ? 'md:order-first [direction:ltr]' : ''}`}>
+    <Image
+      src={image.src}
+      alt={image?.alt ?? ''}
+      width={image?.width ?? 500}
+      height={image?.height ?? 500}
+      class="h-auto w-full rounded-lg"
+      loading="lazy"
+    />
+  </div>
+)}
+
+
     </div>
   </div>
 </WidgetWrapper>
