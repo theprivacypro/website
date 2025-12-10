@@ -50,7 +50,7 @@ Because we do not sell or share personal information, or engage in targeted adve
 
 ## Does The Privacy Pro use third parties to process my personal information?
 
-The Privacy Pro uses cloud hosting providers (Site Ground), cloud-based software (Google Suite, Notion, QuickBooks), email marketing platforms (Campaign Monitor), calendar services (Cal.com and Calendly), and messaging tools (Signal, What'sApp, iMessage, and SMS).
+The Privacy Pro uses cloud hosting providers (Site Ground), cloud-based software (Google Suite, Notion, QuickBooks), email marketing platforms (Campaign Monitor), calendar services (Cal.com), and messaging tools (Signal, What'sApp, iMessage, and SMS).
 
 We make sure the third parties are not allowed to access your personal information, copy it, or use it for any purpose other than to deliver the service to us.
 
